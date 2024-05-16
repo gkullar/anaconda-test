@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()" autocomplete="off" novalidate>
+  <mat-form-field>
+    <mat-label>Player one name</mat-label>
+    <input type="text" matInput formControlName="playerOneName" />
+    <mat-error>Please provide a player name</mat-error>
+  </mat-form-field>
+
+  @if (form.get('playerTwoName')) {
+    <mat-form-field>
+      <mat-label>Player two name</mat-label>
+      <input type="text" matInput formControlName="playerTwoName" />
+      <mat-error>Please provide a player name</mat-error>
+    </mat-form-field>
+  }
+
+  <button mat-button color="primary" type="submit">Submit</button>
+  <button mat-button color="primary" type="button" (click)="back.emit()">Back</button>
+</form>

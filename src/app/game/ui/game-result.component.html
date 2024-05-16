@@ -1,0 +1,11 @@
+<p class="mat-subtitle-1">{{ result }}</p>
+
+<p class="mat-subtitle-2">
+  Current score: {{ playerOne.wins }} ({{ playerOne.name }}) - {{ playerTwo.wins }} ({{
+    playerTwo.name
+  }})
+</p>
+
+<button mat-button color="primary" (click)="play.emit()">Play again</button>
+<button mat-button color="primary" (click)="save.emit()">Save</button>
+<button mat-button color="primary" (click)="finish.emit()">Finish</button>

@@ -1,0 +1,7 @@
+<button mat-button color="primary" (click)="setGameMode.emit('single')">Single game</button>
+<button mat-button color="primary" (click)="setGameMode.emit('multiplayer')">
+  Multiplayer game
+</button>
+@if (hasSavedGame) {
+  <button mat-button color="primary" (click)="loadGame.emit()">Load game</button>
+}

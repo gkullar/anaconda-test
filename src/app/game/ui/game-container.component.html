@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-content>
+    @if (store.vm$ | async; as vm) {
+      @switch (vm.status) {
+        @case ('idle') {
+          <app-game-menu
+            [hasSavedGame]="vm.hasSavedGame"
+            (setGameMode)="store.setGameMode($event)"
+            (loadGame)="store.loadGame()"
+          />
+        }
+        @case ('start') {
+          <app-game-player-form
+            [gameMode]="vm.gameMode"
+            (submitForm)="store.setPlayers($event)"
+            (back)="store.setGameStatus('idle')"
+          />
+        }
+        @case ('player-one-turn') {
+          <app-game-options
+            [gameMode]="vm.gameMode"
+            [player]="vm.playerOne"
+            (selectPlayerOption)="store.setPlayerOneOption($event)"
+          />
+        }
+        @case ('player-two-turn') {
+          <app-game-options
+            [gameMode]="vm.gameMode"
+            [player]="vm.playerTwo"
+            (selectPlayerOption)="store.setPlayerTwoOption($event)"
+          />
+        }
+        @case ('finished') {
+          <app-game-result
+            [result]="(result$ | async) ?? ''"
+            [playerOne]="vm.playerOne"
+            [playerTwo]="vm.playerTwo"
+            (play)="store.setGameStatus('player-one-turn')"
+            (save)="store.saveGame()"
+            (finish)="store.finishGame()"
+          />
+        }
+      }
+    }
+  </mat-card-content>
+</mat-card>

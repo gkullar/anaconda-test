@@ -1,0 +1,9 @@
+:host {
+  max-width: 440px;
+  display: block;
+}
+
+::ng-deep button {
+  display: block;
+  width: 100%;
+}
