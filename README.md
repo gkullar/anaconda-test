@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-This is a coding challenge is to implement a two-player game of rock, paper, scissors in the web browser. Coding the solution has been time boxed to ~3 hours.
+This is a coding challenge to implement a two-player game of rock, paper, scissors in the web browser. Coding the solution has been time-boxed to ~3 hours.
 
 Please see [NOTES.md](/NOTES.md) for documentation on decisions made, what was achieved, what improvements could be made and any outstanding issues.
 
